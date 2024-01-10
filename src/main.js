@@ -1,21 +1,16 @@
-
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-
 const getImages = (query) => {
     loaderRef.style.display = 'block';
     return fetch(`https://pixabay.com/api/?key=41717891-03a798ff6847d2641a93432cc&q=${query}&image_type=photo&orientation=horizontal&safesearch=true`)
-
 }
-
 
 const formRef = document.querySelector('.form')
 const galleryRef = document.querySelector('.gallery')
 const loaderRef = document.querySelector('.loader')
-
 
 loaderRef.style.display = 'none'
 
@@ -36,8 +31,8 @@ formRef.addEventListener('submit', (event) => {
                     position: 'topRight',
                     message: 'Sorry, there are no images matching your search query. Please try again!',
                 }); return
-
             }
+            galleryRef.innerHTML = "";
             const markup = result.hits.map((hit) => {
                
                 return `<li class="gallery-item">
@@ -57,9 +52,7 @@ formRef.addEventListener('submit', (event) => {
             </li>`
             }).join("")
             galleryRef.insertAdjacentHTML(`beforeend`, markup)
-            new SimpleLightbox(`.gallery-item a`)
-            console.log(result);
-
+            new SimpleLightbox(`.gallery-item a`)           
         })
         .catch(error => {
             loaderRef.style.display = 'none';
@@ -69,3 +62,5 @@ formRef.addEventListener('submit', (event) => {
             })
         })
 })
+
+

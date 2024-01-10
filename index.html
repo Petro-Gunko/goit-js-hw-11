@@ -7,24 +7,18 @@
     <title>HomeWork11</title>
     
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-10c40100.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-46aac873.js">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-eb6030bc.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-58e622ed.css">
   </head>
   <body>
-    <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
+    <form class="form">
+      <input type="text" name="query" placeholder="Search images..." />
+      <button type="submit">search</button>
+    </form>
+    <span class="loader"></span>
 
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-
+    <ul class="gallery"></ul>
     
   </body>
 </html>
